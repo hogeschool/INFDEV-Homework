@@ -1,3 +1,12 @@
+def smallestTwo(x,y):
+  if x < y:
+    return x
+  else:
+    return y
+
+def smallestThree(x,y,z):
+  return smallestTwo(x,smallestTwo(y,z))
+
 def sumTwo(x,y):
   return x + y
 
