@@ -19,13 +19,10 @@ public class Car {
         System.out.println(this);
     }
 
+    //an other method, comparable to the __str__ method
     @Override
     public String toString() {
-        return "Car{" +
-                "positionX=" + positionX +
-                ", positionY=" + positionY +
-                ", name='" + name + '\'' +
-                '}';
+        return "Car{positionX=" + positionX + ", positionY=" + positionY + ", name='" + name + "'" + '}';
     }
 
     //the main method, this is the start of the application
