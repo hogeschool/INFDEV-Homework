@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6e026e0e-3ab5-4cc3-a598-805e37c8c62d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Functions.py</StartupFile>
+    <StartupFile>Lists.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Data structure.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Functions.py" />
+    <Compile Include="Lists.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
