@@ -22,4 +22,5 @@ public class ExamDev2 {
         System.out.println(sum);
 
     }
+
 }
