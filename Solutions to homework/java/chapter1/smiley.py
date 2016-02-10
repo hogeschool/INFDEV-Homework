@@ -15,7 +15,7 @@ def smiley(diameter):
             isOoghoogte = y == diameter_div3
 
             isLinkeroog = x == diameter_div3
-            isRechteroog = x == math.floor((isLinkeroog) + diameter / 2 - 1)
+            isRechteroog = x == math.floor(diameter_div3 + diameter / 2 - 1)
 
             isMondhoogte = y == 2 * (diameter_div3)
             isMond = abs(x - center_x) < diameter / 4
@@ -33,3 +33,11 @@ def smiley(diameter):
     return result
 
 print(smiley(20))
+
+#
+# result = ""
+# for i in range (0 ,9):
+#     for j in range (0,i):
+#         result += "*"
+#     result += "\n"
+# print ( result )
