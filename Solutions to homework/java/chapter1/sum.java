@@ -1,8 +1,8 @@
-package drills.drill1;
+package chapter1;
 
 import java.util.Scanner;
 
-public class sum {
+public class Sum {
     public static void main(String[] args)  {
         System.out.print("Enter a small number: ");
 

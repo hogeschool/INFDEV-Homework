@@ -18,6 +18,7 @@
 # *.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
+/Solutions to homework/headFirstJava
 *.bbl
 *.bcf
 *.blg

@@ -25,13 +25,14 @@ public class App {
         System.out.printf("Vehicle 2 is loaded? %b\n", v2lLoaded);
         System.out.printf("Vehicle 3 is loaded? %b\n", v3lLoaded);
 
-        for (int i = 0; v1.move(); i++)
+        for (int i = 0; v1.move(); i++) {
             System.out.println("Vehicle one is still going strong after " + i + " steps");
-        for (int i = 0; v2.move(); i++)
+        }
+        for (int i = 0; v2.move(); i++) {
             System.out.println("Vehicle two is still going strong after " + i + " steps");
-        for (int i = 0; v3.move(); i++)
+        }
+        for (int i = 0; v3.move(); i++) {
             System.out.println("Vehicle three is still going strong after " + i + " steps");
-
-        List a;
+        }
     }
 }

@@ -1,7 +1,7 @@
-package exercises.exercise1;
+package chapter1;
 
 public class Counter {
-    int count;
+    public int count;
     int target;
     Runnable onTarget;
 

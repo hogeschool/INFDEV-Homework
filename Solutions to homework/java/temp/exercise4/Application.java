@@ -1,19 +1,20 @@
 package exercises.exercise4;
 
-import com.sun.tools.javac.util.List;
-
 import java.io.IOException;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 
 public class Application {
     public static void main(String[] args) {
+        Wheel18Inch[] wheels = {new Wheel18Inch(),new Wheel18Inch(),new Wheel18Inch(),new Wheel18Inch()};
+
         Auto auto = new Auto(
                 new Position(0f),
                 new LargeTank(),
                 new Mercedes500Engine(),
                 new Mercedes722Comma6Gearbox(),
-                List.of(new Wheel18Inch(),new Wheel18Inch(),new Wheel18Inch(),new Wheel18Inch())
+                Arrays.asList(wheels)
         );
 
         auto.loadFuel(20f);

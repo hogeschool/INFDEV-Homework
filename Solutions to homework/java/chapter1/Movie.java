@@ -1,4 +1,4 @@
-package drills.drill2;
+package chapter1;
 
 public class Movie {
     String title;
