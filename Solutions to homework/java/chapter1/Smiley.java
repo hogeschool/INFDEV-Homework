@@ -11,14 +11,23 @@ public class Smiley {
                 int x = diameter - i;
                 int y = diameter - j;
 
-                if(Math.round(Math.sqrt(x*x + y*y)) == diameter){
+                if(Math.round(Math.sqrt(x*x + y*y)) == diameter-1){
                     result += "*";
+                }else{
+                    if(x != diameter/3 && true || false){
+
+                    }else{
+                        result += " ";
+                    }
                 }
 
                 //TODO not finished yet
 
             }
+            result += "\n";
         }
+
+        System.out.println(result);
     }
 
 }
