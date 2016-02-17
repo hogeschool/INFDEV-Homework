@@ -13,6 +13,21 @@
 \renewcommand{\thepart}{\arabic{part}}
 
 
+\usepackage{xcolor}     % for colour
+\usepackage{lipsum}     % for sample text
+\usepackage{ntheorem}   % for theorem-like environments
+\usepackage{mdframed}   % for framing
+
+
+\theoremstyle{break}
+\theoremheaderfont{\bfseries}
+\newmdtheoremenv[%
+linecolor=gray,leftmargin=60,%
+rightmargin=40,
+backgroundcolor=gray!40,%
+innertopmargin=0pt]{myprop}{}
+
+
 \usepackage{fancyhdr}
 \setlength{\headheight}{15.2pt}
 \pagestyle{fancyplain}
