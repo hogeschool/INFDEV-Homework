@@ -1,4 +1,4 @@
-package exercises.exercise2.fuels;
+package chapter2.fuels;
 
 public abstract class Fuel {
     private int amount;

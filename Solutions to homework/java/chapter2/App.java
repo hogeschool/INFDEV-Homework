@@ -1,13 +1,12 @@
-package exercises.exercise2;
+package chapter2;
 
-import exercises.exercise2.fuels.Dilithium;
-import exercises.exercise2.fuels.Gasoline;
-import exercises.exercise2.vehicles.Car;
-import exercises.exercise2.vehicles.Enterprise;
-import exercises.exercise2.vehicles.Truck;
-import exercises.exercise2.vehicles.Vehicle;
 
-import java.util.List;
+import chapter2.fuels.Dilithium;
+import chapter2.fuels.Gasoline;
+import chapter2.vehicles.Car;
+import chapter2.vehicles.Enterprise;
+import chapter2.vehicles.Truck;
+import chapter2.vehicles.Vehicle;
 
 public class App {
 

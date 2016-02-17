@@ -1,13 +1,13 @@
-package exercises.exercise2.vehicles;
+package chapter2.vehicles;
 
-import exercises.exercise2.fuels.Diesel;
-import exercises.exercise2.fuels.Fuel;
+import chapter2.fuels.Fuel;
+import chapter2.fuels.Gasoline;
 
-public class Truck implements Vehicle{
-    Fuel tank = new Diesel(0);
+public class Car implements Vehicle{
+    Fuel tank = new Gasoline(0);
 
     public boolean loadFuel(Fuel fuel){
-        if(! (fuel instanceof Diesel)){
+        if(! (fuel instanceof Gasoline)){
             return false;
         }
         tank = fuel;
@@ -19,15 +19,15 @@ public class Truck implements Vehicle{
             tank.setAmount(tank.getAmount() - 1);
             return true;
         }
-
         return false;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Truck{");
+        final StringBuilder sb = new StringBuilder("Car{");
         sb.append("tank=").append(tank);
         sb.append('}');
         return sb.toString();
     }
+
 }

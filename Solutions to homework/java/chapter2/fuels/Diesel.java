@@ -1,4 +1,4 @@
-package exercises.exercise2.fuels;
+package chapter2.fuels;
 
 public class Diesel extends Fuel {
 

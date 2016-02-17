@@ -69,9 +69,25 @@ print(result)
                                 \item a toString method
                                 \item a main method that instantiates a Sprint-object and fills it with
                                 \item addUserStory which adds a UserStory to the array of Userstories
+                            \end{itemize}
                         \end{itemize}
-                    \end{itemize}
                 \end{itemize}
+
+            \item We will revisit the UserStory- and Sprint-classes and extend them. In this exercise you will apply knowledge about constructors, collections
+                \begin{enumerate}
+                    \item To both classes add a constructor which sets their instance variables.
+                    \item In the Sprint class: Instead of an array, use an ArrayList to store UserStories.
+                    \item Sprints usually have a startdate (17th of february) and a duration (for example: 1 week). Add these variables to the class. Try and google which datatypes (classes) are suitable for storing dates and durations.
+                    \item Also, add getters for the previous variables and update the constructor.
+                    \item UserStories have to store their status: Todo, In progress, To verify, Done. Add a variable that can store this.
+                    \item Write methods in the Sprint-class that:
+                    \begin{itemize}
+                         \item returns the amount of hours of work still to be done in a sprint.
+                         \item returns the amount of hours already done in a sprint.
+                         \item returns if the current sprint is done
+                    \end{itemize}
+                    \item (Optional) The datatype you chose for the status (Todo, Done, etc.) is probably a String, right? Readup\footnote{\href{https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html}{https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html}} on Enums, a special type and use an enum to store the status.
+                \end{enumerate}
     \end{enumerate}
 
 \chapter{Reuse through polymorphism}

@@ -1,7 +1,7 @@
-package exercises.exercise2.vehicles;
+package chapter2.vehicles;
 
-import exercises.exercise2.fuels.Dilithium;
-import exercises.exercise2.fuels.Fuel;
+import chapter2.fuels.Dilithium;
+import chapter2.fuels.Fuel;
 
 public class Enterprise implements Vehicle {
     Fuel tank = new Dilithium(0);

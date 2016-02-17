@@ -1,4 +1,4 @@
-package chapter1.samples;
+package chapter1.samples2;
 
 public class Floats {
     public static void main(String[] args) {
