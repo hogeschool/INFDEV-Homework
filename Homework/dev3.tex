@@ -173,14 +173,14 @@ Write a class \texttt{Sprint} that contains:
          	\item Write an \texttt{IAction<T>} parametric interface with a method \texttt{Invoke} that takes no arguments number and returns an object belonging to the type of the \texttt{T} (the parameter of the interface)
          	\item Write a \texttt{When} class that implements \texttt{IStateMachine}; A \texttt{When} takes an \texttt{IAction} of type \texttt{bool} (\texttt{IAction<bool>}) when instantiated and at every update it tries to invoke the given \texttt{IAction} and only if it returns \texttt{true} then set \texttt{Done} to \texttt{true}
          	\item Test your program with the following code \texttt{new Sequence(new When(}\\ \texttt{myRandom), new Run(new Print("Hello World")))}. Make sure that it prints "Hello World" after a random time. For this homework use MonoGame so to get the elapsed time for each update call. \texttt{myRandom} is an instance of the following class:
-         	\begin{lstlisting}         	
-			pulic class MyRandom : IAction<bool>{
-			  Random seed = new System.Random();
-			  public bool Invoke(){ 
-			    return seed.Random().Next(10) > 7; 
-			  }
-			}
-			\end{lstlisting}
+\begin{lstlisting}         	
+pulic class MyRandom : IAction<bool>{
+  Random seed = new System.Random();
+  public bool Invoke(){ 
+    return seed.Random().Next(10) > 7; 
+  }
+}
+\end{lstlisting}
 		\end{itemize}
 	     \end{myprop}
          	
