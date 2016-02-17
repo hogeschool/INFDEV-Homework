@@ -44,6 +44,13 @@ print(result)
                 \item (\textbf{Advanced}) With a static method/overloaded operator \texttt{Plus} which adds two counters into one;
                 \item (\textbf{Advanced}) With a method \texttt{OnTarget} that takes as input a lambda function which will be fired when the counter reaches a given count.
             \end{itemize}
+            
+	        \textbf{No reference solution yet:}
+	        \begin{itemize}
+	        	\item Make a \texttt{ListInt} interface with methods \texttt{Length}, \texttt{Iterate}, \texttt{Map}, and \texttt{Filter}
+	        	\item Define the concrete classes \texttt{NodeInt} and \texttt{EmptyInt} both implementing \texttt{ListInt}
+	        	\item Make a \texttt{ListInt}, fill it with a series of numbers, increment them all by one (hint: use \texttt{Map}), and print them all on the screen (hint: use \texttt{Iterate})
+	        \end{itemize}
 
             \item Write a Java/C\# program featuring
                 \begin{itemize}
@@ -91,30 +98,50 @@ print(result)
     \end{enumerate}
 
 \chapter{Reuse through polymorphism}
+
+
     \section{Exercises}
-        \begin{itemize}
-            \item Write a \texttt{Vehicle} interface with a method \texttt{move} and a method \texttt{loadFuel}; \texttt{loadFuel} accepts a \texttt{Fuel} instance, where \texttt{Fuel} is an interface of your writing; \texttt{move} returns a boolean which is \texttt{true} if there is enough fuel, and \texttt{false} otherwise
-            \item Write a concrete class \texttt{Car} and a concrete class \texttt{Gasoline} that implement, respectively, \texttt{Vehicle} and \texttt{Fuel}; the \texttt{Car} checks that the given fuel is indeed \texttt{Gasoline}
-            \item Write a concrete class \texttt{Truck} and a concrete class \texttt{Diesel} that implement, respectively, \texttt{Vehicle} and \texttt{Fuel}; the \texttt{Truck} checks that the given fuel is indeed \texttt{Diesel}
-            \item Write a concrete class \texttt{Enterprise} and a concrete class \texttt{Dilithium} that implement, respectively, \texttt{Vehicle} and \texttt{Fuel}; the \texttt{Enterprise} checks that the given fuel is indeed \texttt{Dilithium}
-            \item Make a program that receives three vehicles, without knowing their concrete type, and moves them (without resorting to conversions) until their fuel is up
-        \end{itemize}
-
-        \textbf{No reference solution yet:}
-        \begin{itemize}
-            \item Make a \texttt{Person} interface with methods (or properties with only a getter):
-            \begin{itemize}
-                \item Name
-                \item Surname
-                \item Age
-            \end{itemize}
-
-            \item Make the \texttt{Customer}, \texttt{Student}, \texttt{Teacher} implementations of \texttt{Person}, ensuring that they all get at least three additional methods and attributes over those in \texttt{Person}
-        \end{itemize}
+	    \subsection{Exercise 1}
+	        \begin{itemize}
+	            \item Write a \texttt{Vehicle} interface with a method \texttt{move} and a method \texttt{loadFuel}; \texttt{loadFuel} accepts a \texttt{Fuel} instance, where \texttt{Fuel} is an interface of your writing; \texttt{move} returns a boolean which is \texttt{true} if there is enough fuel, and \texttt{false} otherwise
+	            \item Write a concrete class \texttt{Car} and a concrete class \texttt{Gasoline} that implement, respectively, \texttt{Vehicle} and \texttt{Fuel}; the \texttt{Car} checks that the given fuel is indeed \texttt{Gasoline}
+	            \item Write a concrete class \texttt{Truck} and a concrete class \texttt{Diesel} that implement, respectively, \texttt{Vehicle} and \texttt{Fuel}; the \texttt{Truck} checks that the given fuel is indeed \texttt{Diesel}
+	            \item Write a concrete class \texttt{Enterprise} and a concrete class \texttt{Dilithium} that implement, respectively, \texttt{Vehicle} and \texttt{Fuel}; the \texttt{Enterprise} checks that the given fuel is indeed \texttt{Dilithium}
+	            \item Make a program that receives three vehicles, without knowing their concrete type, and moves them (without resorting to conversions) until their fuel is up
+	        \end{itemize}
+	
+	        \textbf{No reference solution yet:}
+	        \begin{itemize}
+	            \item Make a \texttt{Person} interface with methods (or properties with only a getter):
+	            \begin{itemize}
+	                \item Name
+	                \item Surname
+	                \item Age
+	            \end{itemize}
+	
+	            \item Make the \texttt{Customer}, \texttt{Student}, \texttt{Teacher} implementations of \texttt{Person}, ensuring that they all get at least three additional methods and attributes over those in \texttt{Person}
+	        \end{itemize}
+     \subsection{Exercise 2}
+     \label{chapter: Reuse through polymorphism}
+     	 \textbf{Basic:}
+	     \begin{itemize}
+	     	\item Write an \texttt{IStateMachine} interface with a method \texttt{Update} and attribute \texttt{Done}, where \texttt{Update} takes a \texttt{float} number and returns \texttt{void}, and \texttt{Done} is read-only and of type \texttt{bool}
+	     	\item Write a concrete class \texttt{Wait} that implements \texttt{IStateMachine}; A \texttt{Wait} takes an initial time when instantiated and at every update it decreases such amount until it gets all consumed. When the time is totally consumed \texttt{Done} becomes \texttt{true}
+		    \item Write a concrete class \texttt{Print} that implements \texttt{IStateMachine}; A \texttt{Print} takes an initial message when instantiated and after the first update it prints the message and sets \texttt{Done} to \texttt{true}
+		    \item Write a concrete class \texttt{Sequence} that implements \texttt{IStateMachine}; A \texttt{Sequence} takes two \texttt{IStateMachine} objects when instantiated and it keeps updating the first state machine until done before start updating the second state machine. \texttt{Done} is set to true when both state machines are done  
+		    \item Test your program with the following code \texttt{new Sequence(new Wait(10), new Print("Hello World"))}. Make sure that it prints "Hello World" after 10 seconds. For this homework use MonoGame so to get the elapsed time for each update call.
+	     \end{itemize}
+	     \textbf{Advanced:}
+	     \begin{itemize}
+	     	\item Extend the \texttt{IStateMachine} interface with a new method \texttt{Reset} that takes no arguments and returns \texttt{void}.
+	     	\item Make a \texttt{Repeat} class that implements \texttt{IStateMachine}; A \texttt{Repeat} takes a state machine when instantiated and at every update it keeps updating the given state machine until it is done. When the given state machine is done it gets reset, so its behavior can start all over again. The {Done} attribute of \texttt{Repeat} is always \texttt{false}
+	     	\item Test your program with the following code \texttt{new Repeat(new Sequence(new Wait(10), new Print("Hello World")))} . Make sure that it prints "Hello World" every 10 seconds, \textit{forever}. For this homework use MonoGame so to get the elapsed time for each update call.
+	     \end{itemize}
 
 \chapter{Reuse through generics}
-    \section{Exercises}
+    \section{Exercise 1}
         \begin{itemize}
+            
             \item (\textbf{Advanced}) Make a \texttt{List<T>} interface with methods \texttt{Length}, \texttt{Iterate}, \texttt{Map}, and \texttt{Filter}
             \item (\textbf{Advanced}) Define the concrete classes \texttt{Node<T>} and \texttt{Empty<T>} both implementing \texttt{List<T>}
             \item (\textbf{Advanced}) Make a \texttt{List<Vehicle>}, fill it with a series of concrete vehicles, and make them all move ten times
@@ -135,6 +162,21 @@ print(result)
 
             \item Make the \texttt{Interval} class we have seen in the first homework of DEV3 generic with respect to the type of the parameters \texttt{l} and \texttt{u}; specifically, build a generic class \texttt{Interval<N>} which takes as input two \texttt{N}'s \texttt{l} and \texttt{u}, and also an instance of \texttt{Number<N>}
         \end{itemize}
+    \section{Exercise 2 - \small based on Chapter \ref{chapter: Reuse through polymorphism}}
+         \begin{itemize}
+         	\item Write an \texttt{IAction<T>} parametric interface with a method \texttt{Invoke} that takes no arguments number and returns an object belonging to the type of the \texttt{T} (the parameter of the interface)
+         	\item Write a \texttt{When} class that implements \texttt{IStateMachine}; A \texttt{When} takes an \texttt{IAction} of type \texttt{bool} (\texttt{IAction<bool>}) when instantiated and at every update it tries to invoke the given \texttt{IAction} and only if it returns \texttt{true} then set \texttt{Done} to \texttt{true}
+         	\item Test your program with the following code \texttt{new Sequence(new When(}\\ \texttt{myRandom), new Run(new Print("Hello World")))}. Make sure that it prints "Hello World" after a random time. For this homework use MonoGame so to get the elapsed time for each update call. \texttt{myRandom} is an instance of the following class:
+         	\begin{lstlisting}
+pulic class MyRandom : IAction<bool>{
+  Random seed = new System.Random();
+  public bool Invoke(){ 
+    return seed.Random().Next(10) > 7; 
+  }
+}
+\end{lstlisting}
+\end{itemize}
+         	
 
 
 
