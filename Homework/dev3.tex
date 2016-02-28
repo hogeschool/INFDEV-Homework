@@ -46,7 +46,7 @@ A \texttt{Counter} with the following body:
                 \item (\textbf{Advanced}) With a method \texttt{OnTarget} that takes as input a lambda function which will be fired when the counter reaches a given count.
             \end{itemize}
             
-    \section{Arrays}
+\section{Arrays}
 \subsection{Exercise 8}
 Make a class \texttt{UserStory} that contains:
                 \begin{itemize}
@@ -73,24 +73,25 @@ Write a class \texttt{Sprint} that contains:
                 \end{itemize}
             \end{itemize}
 
-    \section{Constructors and Collections}
-\subsection{Exercise 8}
+\section{Constructors and Collections}
+\subsection{Exercise 9}
 
-                 We will revisit the UserStory- and Sprint-classes and extend them. In this exercise you will apply knowledge about constructors, collections
-                     \begin{enumerate}
-                         \item To both classes add a constructor which sets their instance variables.
-                         \item In the Sprint class: Instead of an array, use an ArrayList to store UserStories.
-                         \item Sprints usually have a startdate (17th of february) and a duration (for example: 1 week). Add these variables to the class. Try and google which datatypes (classes) are suitable for storing dates and durations.
-                         \item Also, add getters for the previous variables and update the constructor.
-                         \item UserStories have to store their status: Todo, In progress, To verify, Done. Add a variable that can store this.
-                         \item Write methods in the Sprint-class that:
-                         \begin{itemize}
-                              \item returns the amount of hours of work still to be done in a sprint.
-                              \item returns the amount of hours already done in a sprint.
-                              \item returns if the current sprint is done
-                         \end{itemize}
-                         \item (Optional) The datatype you chose for the status (Todo, Done, etc.) is probably a String, right? Readup\footnote{\href{https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html}{https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html}} on Enums, a special type and use an enum to store the status.
-                     \end{enumerate}
+     We will revisit the \texttt{UserStory}- and \texttt{Sprint}-classes and extend them.
+     In this exercise you will apply knowledge about constructors, collections
+         \begin{enumerate}
+             \item To both classes add a constructor which sets their instance variables.
+             \item In the \texttt{Sprint} class: Instead of an array, use an ArrayList to store UserStories.
+             \item \texttt{Sprints} usually have a startdate (17th of february) and a duration (for example: 1 week). Add these variables to the class. Try and google which datatypes (classes) are suitable for storing dates and durations.
+             \item Also, add getters for the previous variables and update the constructor.
+             \item \texttt{UserStories} have to store their status: Todo, In progress, To verify, Done. Add a variable that can store this.
+             \item Write methods in the \texttt{Sprint}-class that:
+             \begin{itemize}
+                  \item returns the amount of hours of work still to be done in a sprint.
+                  \item returns the amount of hours already done in a sprint.
+                  \item returns if the current sprint is done
+             \end{itemize}
+             \item (Optional) The datatype you chose for the status (Todo, Done, etc.) is probably a String, right? Readup\footnote{\href{https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html}{https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html}} on Enums, a special type and use an enum to store the status.
+         \end{enumerate}
 
 
 \chapter{Reuse through polymorphism}
@@ -101,12 +102,12 @@ Write a class \texttt{Sprint} that contains:
 	    \begin{itemize}
 	    	\item Define an interface \texttt{Animal} with at least one method \texttt{SaySomething} that takes no arguments and returns \texttt{void}
 	    	\item Define a \texttt{Cat} class that implements \texttt{Animal}. A cat prints on the console \texttt{Miao...} when \texttt{SaySomething} is called
-	    	\item Define a \texttt{Dog} class that implements \texttt{Animal}. A cat prints on the console \texttt{Bao...} when \texttt{SaySomething} is called
-	    	\item Define a \texttt{Cow} class that implements \texttt{Animal}. A cat prints on the console \texttt{Muuu...} when \texttt{SaySomething} is called
+	    	\item Define a \texttt{Dog} class that implements \texttt{Animal}. A dog prints on the console \texttt{Bao...} when \texttt{SaySomething} is called
+	    	\item Define a \texttt{Cow} class that implements \texttt{Animal}. A cow prints on the console \texttt{Muuu...} when \texttt{SaySomething} is called
 	    	\item[] Test your program with the following codes:
 	    	\item The following code \texttt{Animal animal1 = new Cat(); animal1.SaySomething();} should print \texttt{Miao...}
-	    	\item The following code \texttt{Animal animal2 = new Dog(); animal1.SaySomething();} should print \texttt{Dog...}
-	    	\item The following code \texttt{Animal animal3 = new Cow(); animal1.SaySomething();} should print \texttt{Cow...}
+	    	\item The following code \texttt{Animal animal2 = new Dog(); animal2.SaySomething();} should print \texttt{Bao...}
+	    	\item The following code \texttt{Animal animal3 = new Cow(); animal3.SaySomething();} should print \texttt{Muuu...}
 	    \end{itemize}
 	    \end{myprop}
 	    
@@ -132,8 +133,7 @@ Write a class \texttt{Sprint} that contains:
 	        \end{itemize}
 
 	        
-	 \subsection{Exercise 3}	   
-
+	 \subsection{Exercise 3}
 		\begin{myprop}
 	    \begin{itemize}
    	    	\item Make a \texttt{ListInt} interface with methods \texttt{Length}, \texttt{Iterate}, \texttt{Map}, \texttt{Filter}, and properties (read-only) IsEmpty
