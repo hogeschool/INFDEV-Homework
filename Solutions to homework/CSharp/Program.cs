@@ -31,6 +31,10 @@ namespace CSharp
       //ExtraHomework.Extra3.Interval i = new ExtraHomework.Extra3.Interval(1, 4);
       //Console.WriteLine(i.Sum);
       //Console.WriteLine(i.Product);
+      
+      ////Interfaces 
+      // Exercise 0
+      //TestInterfaceExercise0()
 
       // extra assignments 6, 7, 8, 9
       //Console.WriteLine(line(new ExtraHomework.Extra6789.IntNumber(), 5, 2, -1));
@@ -41,6 +45,7 @@ namespace CSharp
       Console.WriteLine(j.Sum);
       Console.WriteLine(j.Product);
     }
+    
 
     static N line<N>(ExtraHomework.Extra6789.Number<N> n, N x, N a, N b)
     {
@@ -79,6 +84,19 @@ namespace CSharp
         Console.WriteLine(t);
         Console.ReadLine();
       }
+    }
+    
+    static void TestInterfaceExercise0(){
+            
+            Animal animal1 = new Cat ();
+			animal1.SaySomething ();
+
+			Animal animal2 = new Dog ();
+			animal2.SaySomething ();
+
+			Animal animal3 = new Cow ();
+			animal3.SaySomething ();
+        
     }
 
     private static void TestAssignment2(Vehicle v1, Vehicle v2, Vehicle v3)
