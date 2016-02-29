@@ -35,10 +35,6 @@ namespace CSharp
       // extra assignments 6, 7, 8, 9
       //Console.WriteLine(line(new ExtraHomework.Extra6789.IntNumber(), 5, 2, -1));
       //Console.WriteLine(line(new ExtraHomework.Extra6789.FloatNumber(), 5.0f, 0.5f, -1.0f));
-      
-      //Interface Excersizes
-      //Exercise 0
-      //TestInterfaceExercise0()
 
       // extra assignment 10
       ExtraHomework.Extra10.Interval<float> j = new ExtraHomework.Extra10.Interval<float>(new ExtraHomework.Extra6789.FloatNumber(), 0.5f, 3.5f);
@@ -50,19 +46,6 @@ namespace CSharp
     {
       return n.Plus(n.Times(x, a), b);
     }
-    
-    private static void TestInterfaceExercise0()
-    {
-            Animal animal1 = new Cat ();
-			animal1.SaySomething ();
-
-			Animal animal2 = new Dog ();
-			animal2.SaySomething ();
-
-			Animal animal3 = new Cow ();
-			animal3.SaySomething ();
-    }
-
 
     private static void TestAssignment4()
     {
@@ -120,7 +103,6 @@ namespace CSharp
         vehicles.Iter(v => v.Move());
       vehicles.Iter(v => Console.WriteLine(v));
     }
-  
 
     private static void TestAssignment1()
     {
