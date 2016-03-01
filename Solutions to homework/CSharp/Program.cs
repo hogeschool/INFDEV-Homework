@@ -35,7 +35,12 @@ namespace CSharp
       ////Interfaces 
       // Exercise 0
       //TestInterfaceExercise0()
-
+      
+      ////Integer list 
+      // Exercise 3
+      //TestInterfaceExercise3()
+      
+        
       // extra assignments 6, 7, 8, 9
       //Console.WriteLine(line(new ExtraHomework.Extra6789.IntNumber(), 5, 2, -1));
       //Console.WriteLine(line(new ExtraHomework.Extra6789.FloatNumber(), 5.0f, 0.5f, -1.0f));
@@ -98,6 +103,13 @@ namespace CSharp
 			animal3.SaySomething ();
         
     }
+    
+    static void TestInterfaceExercise3(){
+			ListInt ls = new NodeInt(10, new NodeInt(4, new NodeInt (5, new NodeInt (3, new EmptyInt ()))));
+			ListInt lsFiltered = ls.Filter ((x) => x % 2 == 0);
+			lsFiltered.Iter((x)=> Console.WriteLine(x));
+//			Console.WriteLine (ls.Length);
+		}
 
     private static void TestAssignment2(Vehicle v1, Vehicle v2, Vehicle v3)
     {
