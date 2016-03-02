@@ -1,4 +1,4 @@
-package exercises.exercise4;
+package chapter4.car;
 
 import java.time.Duration;
 import java.util.List;

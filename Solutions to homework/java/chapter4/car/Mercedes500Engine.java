@@ -1,4 +1,4 @@
-package exercises.exercise4;
+package chapter4.car;
 
 public class Mercedes500Engine implements Engine{
 

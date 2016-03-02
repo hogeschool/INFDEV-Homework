@@ -1,4 +1,4 @@
-package exercises.exercise4;
+package chapter4.car;
 
 public class Wheel18Inch implements Wheel {
     float radius;

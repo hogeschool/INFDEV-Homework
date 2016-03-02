@@ -1,4 +1,4 @@
-package exercises.exercise4;
+package chapter4.car;
 
 public interface Wheel extends PowerTrainComponent {
     float CENTIMETERS_PER_INCH = 2.54f;
