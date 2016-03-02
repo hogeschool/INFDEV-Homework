@@ -1,12 +1,12 @@
 package chapter2.vehicles;
 
 import chapter2.fuels.Dilithium;
-import chapter2.fuels.Fuel;
+import chapter2.fuels.IFuel;
 
 public class Enterprise implements Vehicle {
-    Fuel tank = new Dilithium(0);
+    IFuel tank = new Dilithium(0);
 
-    public boolean loadFuel(Fuel fuel){
+    public boolean loadFuel(IFuel fuel){
         if(! (fuel instanceof Dilithium)){
             return false;
         }

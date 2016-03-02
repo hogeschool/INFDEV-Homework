@@ -1,12 +1,12 @@
 package chapter2.vehicles;
 
 import chapter2.fuels.Diesel;
-import chapter2.fuels.Fuel;
+import chapter2.fuels.IFuel;
 
 public class Truck implements Vehicle{
-    Fuel tank = new Diesel(0);
+    IFuel tank = new Diesel(0);
 
-    public boolean loadFuel(Fuel fuel){
+    public boolean loadFuel(IFuel fuel){
         if(! (fuel instanceof Diesel)){
             return false;
         }
