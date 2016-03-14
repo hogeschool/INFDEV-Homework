@@ -1,7 +1,8 @@
 package chapter2.statemachine;
 
 public class Sequence implements IStateMachine {
-    IStateMachine s1, s2;
+    IStateMachine s1;
+    IStateMachine s2;
 
     public Sequence(IStateMachine s1, IStateMachine s2) {
         this.s1 = s1;

@@ -11,16 +11,27 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        System.out.println("Started");
+
         Sequence s = new Sequence(new Wait(10f), new Print("Hello World!"));
+        LongValue lastNanoTime = new LongValue( System.nanoTime() );
+
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
-                s.update(1f);
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
+                // calculate time since last update.
+                double elapsedTime = (currentNanoTime - lastNanoTime.value) / 1000000000.0;
+                lastNanoTime.value = currentNanoTime;
+                s.update((float) elapsedTime);
             }
         }.start();
+    }
+}
+
+class LongValue {
+    public long value;
+
+    public LongValue(long i){
+        value = i;
     }
 }
