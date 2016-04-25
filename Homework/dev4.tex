@@ -1,18 +1,80 @@
 \setcounter{part}{4}
 \part{INFDEV01-4}
-\setcounter{chapter}{1}
+\setcounter{chapter}{0}
 \chapter{Introduction to design patterns}
 
 \section{Safe choice in presence of polymorphism }
-the visitor design pattern is a way of separating an algorithm from an object structure on which it operates. A practical result of this separation is the ability to add new operations to existing object structures without modifying those structures. It is one way to follow the open/closed principle. \footcite{Visitor pattern: \href{https://en.wikipedia.org/wiki/Visitor_pattern}}
+The visitor design pattern is a way of separating an algorithm from an object structure on which it operates.
+A practical result of this separation is the ability to add new operations to existing object structures without modifying those structures.
+It is one way to follow the open/closed principle.
+% \footcite{Visitor pattern: \href{https://en.wikipedia.org/wiki/Visitor_pattern}}
 
     
-\subsection{Exercise 1} In this assignment you will apply the visitor design pattern to print the type of the number given as an arguments in the main program.  
+\subsection{Exercise 1}
+\subsubsection{Design}
+In this assignment you will apply the visitor design pattern to print the concrete type of a number.
+
 \begin{itemize}
-\item \textbf{INumber} interface: contains the method visits which return a void and take INumberVisitor as an input. 
-\item \textbf{INumberVisitor} interface: contains two methods with almost identical signature namely visits which returns a void. The first method takes a MyFloat  
-\item
-\end{itemize}  
-\subsection{Exercise 2} 
-\subsection{Exercise 3} 
-\subsection{Exercise 4} 
+\item \textbf{INumber} interface: contains the method visit, which returns a void and takes an INumberVisitor as input.
+\item \textbf{INumberVisitor} interface: contains two methods with almost identical signature, namely onMyInt and onMyFloat, both returning void. The former takes a MyInt, the latter takes a MyFloat as an argument.
+\item \textbf{MyFloat} implements INumber. Its visit calls onMyFloat on the given visitor-object, with 'this' as input.
+\item \textbf{MyInt} implements INumber. Its visit calls onMyInt on the given visitor-object, with 'this' as input.
+\item \textbf{NumberVisitor} implements INumberVisitor. It prints "Found float" on onMyFloat and "Found int" on onMyInt.
+\end{itemize}
+\subsubsection{Test}
+In the main program: define a NumberVisitor and use it to visit an instance of a MyInt-object.
+
+\subsection{Exercise 2}
+\subsubsection{Design}
+In this assignment you will make another implementation of the visitor pattern.
+This time you will focus on music.
+\begin{itemize}
+\item \textbf{ISong}, an interface with a visit-method, which takes an \texttt{IMusicLibraryVisitor}.
+\item \textbf{Jazz} implements ISong. Its visit calls onJazz on the given visitor-object, wiht 'this' as input.
+\item \textbf{HeavyMetal} implements ISong. Its visit calls onHeavyMetal on the given visitor-object, wiht 'this' as input.
+\item \textbf{IMusicLibraryVisitor} interface: contains two methods with almost identical signature, namely onHeavyMetal and onJazz, both returning void. The former takes a HeavyMetal song, the latter takes a Jazz song as an argument.
+\item \textbf{MusicLibraryVisitor} implements IMusicLibraryVisitor and is composed of two Lists, one for jazz and one for heavy metal. It adds the heavy metal song to the corresponding list on onHeavyMetal, and the jazz song to the corresponding list on onJazz.
+\end{itemize}
+\subsubsection{Test}
+Write a program that adds some jazz songs and some heavy metal songs to a list and visit each song in the list, using a MusicLibraryVisitor.
+Eventually, print the amount of heavy metal song and jazz songs in the MusicLibraryVisitor.
+
+\subsection{Exercise 3}
+In this assignment you will make another implementation of the visitor pattern.
+This time you will focus on options.
+
+\subsubsection{Design}
+\begin{itemize}
+\item \textbf{IOption $\langle$T $\rangle$} a parametic interface: contains the method visit (parametric with type U), which returns an object of type U and takes an IOptionVisitor as input.
+\item \textbf{IOptionVisitor $\langle$T, U $\rangle$} a parametric interface: contains two methods with almost identical signature, namely onSome and onNone, both returning an object of type U. The former takes a T-value, the latter takes nothing as an argument.
+\item \textbf{Some} implements IOption. Its visit calls onSome on the given visitor-object, with this.value as input, where value is a field of such class, initialized properly.
+\item \textbf{None} implements IOption. Its visit calls onNone on the given visitor-object.
+\item \textbf{IntPrettyPrinterIOptionVisitor} implements IOptionVisitor, where T equals Integer and U equals String. It returns "I am nothing ..." on onNone and the value converted to string on onSome.
+\end{itemize}
+
+\subsubsection{Test}
+In the main program: define a IntPrettyPrinterIOptionVisitor and use it to print the value of a Some containing number 5.
+
+
+\subsection{Exercise 4}
+In this assignment you will make another implementation of the visitor pattern.
+This time you will focus on options combined with only lambda's.
+
+\subsubsection{Design}
+\begin{itemize}
+\item \textbf{IOption $\langle$ T $\rangle$} a parametic interface: contains the method visit (parametric with type U), which returns an object of type U and takes two lambda's: the first one called onNone with type void to U, the second called onSome with type T to U.
+
+\item \textbf{Some} implements IOption. Its visit calls the onSome function provided in the arguments, with this.value as input, where value is a field of such class, initialized properly.
+\item \textbf{None} implements IOption. Its visit calls the onNone function provided in the arguments.
+\end{itemize}
+
+\subsubsection{Test}
+In the main program: define a IntPrettyPrinterIOptionVisitor and use it to print the value of a Some containing number 5.
+Define a Some ccontaining number 5, and visit it with the following functions as input:
+\begin{itemize}
+    \item A function that takes nothing and returns the string "I am nothing".
+    \item A function that takes an integer and returns its string representation.
+\end{itemize}
+
+\subsection{Exercise 5 - Combining exercises 3, 4}
+Recycle all declarations from exercise 3, and extend them with a new visitor that accepts two functions (see exercise 4) each specifying the behaviours for objects of type IOption: our Some and None. Use them properly.
