@@ -19,7 +19,7 @@ print(result)
 \subsection{Exercise 1} Write a program that draws a smiley on the console (just like in INFDEV02-1).
 \subsection{Exercise 2} Write an example of Python code that would cause a type error in Java/C\#
 \subsection{Exercise 3} Make a static function that sums all numbers between two inputs read from the console and prints the result
-\subsection{Exercise 4} Given all semantic and typing rules in the slides, write down in plain English or Dutch
+\subsection{Exercise 4} Given all semantic and typing rules in the slides, write them down in plain English or Dutch
 \subsection{Exercise 5} 
 Make an \texttt{Interval} class that:
             \begin{itemize}
@@ -56,22 +56,25 @@ Make a class \texttt{UserStory} that contains:
                             \item description
                         \end{itemize}
 
-                        \item getters and setters for those fields
-                        \item a toString method
-                        \item a main method that instantiates 3 UserStory-objects
+                        \item getters and setters for the two variables variables
+                        \item a ToString method
                 \end{itemize}
-
+\noindent
+Moreover, in the main method instantiate 3 UserStory-objects.
+\vspace{0.5cm}
+\noindent
 Write a class \texttt{Sprint} that contains:
                  \begin{itemize}
                     \item 1 variable: an array of UserStories
                     \item methods:
                     \begin{itemize}
-                        \item totalHours() which sums all the hours in the UserStories
-                        \item a toString method
-                        \item a main method that instantiates a Sprint-object and fills it with
-                        \item addUserStory which adds a UserStory to the array of Userstories
+                        \item TotalHours() which sums all the hours in the UserStories
+                        \item a ToString method
+                        \item AddUserStory which adds a UserStory to the array of Userstories
                 \end{itemize}
             \end{itemize}
+\noindent
+Moreover, in the main method instantiate 3 UserStory-objects.        
 
 \section{Constructors and Collections}
 \subsection{Exercise 9}
@@ -80,7 +83,7 @@ Write a class \texttt{Sprint} that contains:
      In this exercise you will apply knowledge about constructors, collections
          \begin{enumerate}
              \item To both classes add a constructor which sets their instance variables.
-             \item In the \texttt{Sprint} class: Instead of an array, use an ArrayList to store UserStories.
+             \item In the \texttt{Sprint} class: Instead of an array, use an ArrayList or List to store UserStories.
              \item \texttt{Sprints} usually have a startdate (17th of february) and a duration (for example: 1 week). Add these variables to the class. Try and google which datatypes (classes) are suitable for storing dates and durations.
              \item Also, add getters for the previous variables and update the constructor.
              \item \texttt{UserStories} have to store their status: Todo, In progress, To verify, Done. Add a variable that can store this.
@@ -98,7 +101,6 @@ Write a class \texttt{Sprint} that contains:
 
     \section{Interfaces}	    
 		\subsection{Exercise 0}
-		\begin{myprop}
 	    \begin{itemize}
 	    	\item Define an interface \texttt{Animal} with at least one method \texttt{SaySomething} that takes no arguments and returns \texttt{void}
 	    	\item Define a \texttt{Cat} class that implements \texttt{Animal}. A cat prints on the console \texttt{Miao...} when \texttt{SaySomething} is called
@@ -109,7 +111,6 @@ Write a class \texttt{Sprint} that contains:
 	    	\item The following code \texttt{Animal animal2 = new Dog(); animal2.SaySomething();} should print \texttt{Bao...}
 	    	\item The following code \texttt{Animal animal3 = new Cow(); animal3.SaySomething();} should print \texttt{Muuu...}
 	    \end{itemize}
-	    \end{myprop}
 	    
     	\subsection{Exercise 1}
     	\begin{itemize}
@@ -134,18 +135,16 @@ Write a class \texttt{Sprint} that contains:
 
 	        
 	 \subsection{Exercise 3}
-		\begin{myprop}
 	    \begin{itemize}
    	    	\item Make a \texttt{ListInt} interface with methods \texttt{Length}, \texttt{Iterate}, \texttt{Map}, \texttt{Filter}, and properties (read-only) IsEmpty
    	    	\item Define the concrete classes \texttt{NodeInt} and \texttt{EmptyInt} both implementing \texttt{ListInt}
    	    	\item (\textbf{Advanced}) Make a \texttt{ListInt}, fill it with a series of numbers, increment them all by one (hint: use \texttt{Map}), and print them all on the screen (hint: use \texttt{Iterate})
 	    \end{itemize}     
-	    \end{myprop}
 	    
      \subsection{Exercise 4}
      \label{chapter: Reuse through polymorphism}     
      	 \textbf{Basic:}
-         \begin{myprop}
+
 	     \begin{itemize}
 	     	\item Write an \texttt{IStateMachine} interface with a method \texttt{Update} and attribute \texttt{Done}, where \texttt{Update} takes a \texttt{float} number and returns \texttt{void}, and \texttt{Done} is read-only and of type \texttt{bool}
 	     	\item Write a concrete class \texttt{Wait} that implements \texttt{IStateMachine}; A \texttt{Wait} takes an initial time when instantiated and at every update it decreases such amount until it gets all consumed. When the time is totally consumed \texttt{Done} becomes \texttt{true}
@@ -153,17 +152,18 @@ Write a class \texttt{Sprint} that contains:
 		    \item Write a concrete class \texttt{Sequence} that implements \texttt{IStateMachine}; A \texttt{Sequence} takes two \texttt{IStateMachine} objects when instantiated and it keeps updating the first state machine until done before start updating the second state machine. \texttt{Done} is set to true when both state machines are done  
 		    \item Test your program with the following code \texttt{new Sequence(new Wait(10), new Print("Hello World"))}. Make sure that it prints "Hello World" after 10 seconds. For this homework use MonoGame so to get the elapsed time for each update call.
 	     \end{itemize}
-	     \end{myprop}
+
 	     \textbf{Advanced:}
-	     \begin{myprop}
+
 	     \begin{itemize}
 	     	\item Extend the \texttt{IStateMachine} interface with a new method \texttt{Reset} that takes no arguments and returns \texttt{void}.
 	     	\item Make a \texttt{Repeat} class that implements \texttt{IStateMachine}; A \texttt{Repeat} takes a state machine when instantiated and at every update it keeps updating the given state machine until it is done. When the given state machine is done it gets reset, so its behavior can start all over again. The {Done} attribute of \texttt{Repeat} is always \texttt{false}
 	     	\item Test your program with the following code \texttt{new Repeat(new Sequence(new Wait(10), new Print("Hello World")))} . Make sure that it prints "Hello World" every 10 seconds, \textit{forever}. For this homework use MonoGame so to get the elapsed time for each update call.
 	     \end{itemize}
-	     \end{myprop}
 
 
+
+\begin{comment}
 \chapter{Reuse through generics}
     \section{Exercise 1}
         \begin{itemize}
@@ -205,7 +205,7 @@ pulic class MyRandom : IAction<bool>{
 		\end{itemize}
 	     \end{myprop}
          	
-
+\end{comment}
 
 
 \chapter{Architectural and design considerations}
